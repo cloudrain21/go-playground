@@ -1,6 +1,7 @@
 package util
 
 import (
+	"bufio"
 	"log"
 	"os"
 )
@@ -11,18 +12,29 @@ type UrlSaver interface {
 
 type FileUrlSaver struct {
 	fileName string
-	urls []string
+	urls     []string
 }
 
 type MemUrlSaver struct {
 	urls []string
 }
 
-func (f FileUrlSaver)AcquireUrls() ([]string, error) {
-	_, err := os.OpenFile(f.fileName, os.O_RDWR | os.O_CREATE | os.O_APPEND, 0755)
+func (f FileUrlSaver) AcquireUrls() error {
+	file, err := os.OpenFile(f.fileName, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0755)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	return nil, nil
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		f.urls = append(f.urls, scanner.Text())
+	}
+
+	return nil
+}
+
+func (f FileUrlSaver) PrintUrls() {
+	for _, url := range f.urls {
+		logger.Println(url)
+	}
 }
