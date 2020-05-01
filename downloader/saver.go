@@ -1,6 +1,9 @@
 package downloader
 
-import "os"
+import (
+	"log"
+	"os"
+)
 
 type UrlSaver interface {
 	AcquireUrls() ([]string, error)
@@ -16,7 +19,10 @@ type MemUrlSaver struct {
 }
 
 func (f FileUrlSaver)AcquireUrls() ([]string, error) {
-	f, err := os.OpenFile(f.fileName, os.O_RDWR | os.O_CREATE | os.O_APPEND, 0755)
+	file, err := os.OpenFile(f.fileName, os.O_RDWR | os.O_CREATE | os.O_APPEND, 0755)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	return nil, nil
 }
