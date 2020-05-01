@@ -7,7 +7,7 @@ import (
 )
 
 type mylogger struct {
-	filename string
+	Filename string
 	*log.Logger
 }
 
@@ -25,7 +25,7 @@ func createLogger(fname string) *mylogger {
 	file, _ := os.OpenFile(fname, os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0777)
 
 	return &mylogger{
-		filename: fname,
+		Filename: fname,
 		Logger:   log.New(file, "My app Name ", log.Lshortfile),
 	}
 }
