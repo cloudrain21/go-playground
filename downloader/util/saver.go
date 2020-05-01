@@ -35,6 +35,6 @@ func (f FileUrlSaver) AcquireUrls() error {
 
 func (f FileUrlSaver) PrintUrls() {
 	for _, url := range f.urls {
-		logger.Println(url)
+		log.Println(url)
 	}
 }
