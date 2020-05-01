@@ -1,8 +1,8 @@
 package main
 
-import "downloader"
+import "github.com/cloudrain21/go-playground/downloader"
 
 func main() {
-	logger := GetLogger("mylog.log")
+	mylog := downloader.GetLogger("mylog.log")
 
 }
