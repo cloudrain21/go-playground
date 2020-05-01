@@ -18,4 +18,5 @@ type MemUrlSaver struct {
 func (f FileUrlSaver)AcquireUrls() ([]string, error) {
 	f, err := os.OpenFile(f.fileName, os.O_RDWR | os.O_CREATE | os.O_APPEND, 0755)
 
+	return nil, nil
 }
