@@ -1,3 +1,3 @@
-http://image.com/img01.jpg
-http://image.com/img02.jpg
-http://image.com/img03.jpg
+https://interactive-examples.mdn.mozilla.net/media/examples/grapefruit-slice-332-332.jpg
+https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg
+https://image.shutterstock.com/image-photo/bright-spring-view-cameo-island-260nw-1048185397.jpg
