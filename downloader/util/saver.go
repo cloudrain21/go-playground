@@ -8,6 +8,8 @@ import (
 
 type UrlSaver interface {
 	AcquireUrls() ([]string, error)
+	PrintUrls()
+	GetUrls() []string
 }
 
 type FileUrlSaver struct {
@@ -26,7 +28,7 @@ func NewFileUrlSaver(fileName string) *FileUrlSaver {
 	}
 }
 
-func (f FileUrlSaver) AcquireUrls() error {
+func (f *FileUrlSaver) AcquireUrls() error {
 	file, err := os.OpenFile(f.fileName, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0755)
 	if err != nil {
 		log.Fatal(err)
@@ -42,6 +44,10 @@ func (f FileUrlSaver) AcquireUrls() error {
 
 func (f FileUrlSaver) PrintUrls() {
 	for _, url := range f.urls {
-		log.Println(url)
+		logger.Println(url)
 	}
+}
+
+func (f FileUrlSaver) GetUrls() []string {
+	return f.urls
 }

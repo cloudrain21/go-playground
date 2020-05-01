@@ -8,13 +8,16 @@ import (
 func main() {
 	logger := util.GetInstance()
 
-	fileSaver := util.NewFileUrlSaver("urls.txt")
-	err := fileSaver.AcquireUrls()
+	urlSaver := util.NewFileUrlSaver("urls.txt")
+	err := urlSaver.AcquireUrls()
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	fileSaver.PrintUrls()
+	download(urlSaver)
 
 	logger.Println("ttttt")
+}
+
+func download(urlSaver util.UrlSaver) {
 }
