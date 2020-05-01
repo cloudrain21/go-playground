@@ -8,7 +8,7 @@ import (
 func main() {
 	logger := util.GetInstance()
 
-	fileSaver := util.FileUrlSaver{"urls.txt", []string{}}
+	fileSaver := util.NewFileUrlSaver("urls.txt")
 	err := fileSaver.AcquireUrls()
 	if err != nil {
 		log.Fatal(err)
@@ -16,5 +16,5 @@ func main() {
 
 	fileSaver.PrintUrls()
 
-	logger.Println("xxx")
+	logger.Println("ttttt")
 }
