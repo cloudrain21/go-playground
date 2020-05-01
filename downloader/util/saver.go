@@ -1,4 +1,4 @@
-package downloader
+package util
 
 import (
 	"log"
