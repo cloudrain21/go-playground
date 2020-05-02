@@ -6,7 +6,7 @@ type Theater struct {
 	MovieList []Movie
 }
 
-func (t *Theater) AddMovie(const movie Movie) {
+func (t *Theater) AddMovie(movie Movie) {
 	t.MovieList = append(t.MovieList, movie)
 }
 
