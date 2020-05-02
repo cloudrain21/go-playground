@@ -2,36 +2,32 @@ package main
 
 import (
 	"fmt"
+	rm "github.com/cloudrain21/go-playground/reservemovie"
 	"time"
 )
 
 func main() {
-	theater := &Theater{}
+	theater := &rm.Theater{}
 
+	theater.AddMovie( rm.NewMovie( "Titanic", 1 * time.Hour, rm.Money{10}) )
 	theater.AddMovie(
-		Movie{
-			"Titanic",
-			time.Hour,
-			Money{10},
-		})
-	theater.AddMovie(
-		Movie{
+		rm.Movie{
 			"Alien",
 			2 * time.Hour,
-			Money{15},
+			rm.Money{15},
 		})
 
 	theater.ShowMovieList()
 
-	audience := Audience{
-		Count{10},
-		Money{1000},
+	audience := rm.Audience{
+		rm.Count{10},
+		rm.Money{1000},
 	}
 
-	reserveMovie := Movie{
+	reserveMovie := rm.Movie{
 		"Alien",
 		2 * time.Hour,
-		Money{15},
+		rm.Money{15},
 	}
 
 	ret := theater.Reserve(reserveMovie, audience)
