@@ -46,7 +46,7 @@ func main() {
 	v := MyInt(100)
 	fmt.Println(v)
 
-	CountDown(5)
+	CountDown(2)
 
 	flag := 1
 	timer := time.AfterFunc(3*time.Second, func() {
@@ -59,6 +59,31 @@ func main() {
 	}
 	fmt.Println("timer stop...")
 	timer.Stop()
+
+
+	m := make(map[int]int, 2)
+	m[1] = 1
+	m[2] = 1
+	fmt.Println("before : ", m)
+	ff1(m)
+	fmt.Println("after : ", m)
+
+	sli := make([]int, 2)
+	sli[0] = 1
+	sli[1] = 1
+	fmt.Println("before : ", sli)
+	ff2(&sli)
+	fmt.Println("after : ", sli)
+}
+
+func ff2(sli *[]int) {
+	*sli = append(*sli, 3)
+	*sli = append(*sli, 4)
+}
+
+func ff1(m map[int]int) {
+	m[3] = 1
+	m[4] = 1
 }
 
 func CountDown(seconds int) {

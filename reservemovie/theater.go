@@ -3,15 +3,15 @@ package reservemovie
 import "fmt"
 
 type Theater struct {
-	movieList []Movie
+	MovieList []Movie
 }
 
-func (t *Theater) AddMovie(movie *Movie) {
-	t.movieList = append(t.movieList, *movie)
+func (t *Theater) AddMovie(movie Movie) {
+	t.MovieList = append(t.MovieList, *movie)
 }
 
 func (t Theater) ShowMovieList() {
-	for _, movie := range t.movieList {
+	for _, movie := range t.MovieList {
 		fmt.Println(movie)
 	}
 }

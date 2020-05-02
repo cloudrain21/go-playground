@@ -1,5 +1,5 @@
 package reservemovie
 
 type Count struct {
-	count int
+	Cnt int
 }
