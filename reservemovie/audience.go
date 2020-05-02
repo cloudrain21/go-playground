@@ -1,6 +1,6 @@
 package reservemovie
 
 type Audience struct {
-	number Count
-	money  Money
+	Number Count
+	Money  Money
 }
