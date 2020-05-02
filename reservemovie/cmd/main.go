@@ -10,12 +10,7 @@ func main() {
 	theater := &rm.Theater{}
 
 	theater.AddMovie( rm.NewMovie( "Titanic", 1 * time.Hour, rm.Money{10}) )
-	theater.AddMovie(
-		rm.Movie{
-			"Alien",
-			2 * time.Hour,
-			rm.Money{15},
-		})
+	theater.AddMovie( rm.NewMovie( "Alien", 2 * time.Hour, rm.Money{15}) )
 
 	theater.ShowMovieList()
 
