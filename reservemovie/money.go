@@ -1,5 +1,5 @@
 package reservemovie
 
 type Money struct {
-	amount int
+	Amount int
 }
